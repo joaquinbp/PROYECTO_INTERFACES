@@ -1,125 +1,183 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <title>Car Bono</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<head>
-		<meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="./views/css/style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .slider {
+        background: url("./img/portada.jpg");
+        height: 380px;
+        background-size: cover;
+      }
+    
+      .footer {
+        background: url("./img/pizarra.jpg");
+        
+      }
+      .navbar{
+        background-color:#393838;
+	  }
+	  .titulo {
+		font-family: 'Droid Serif';
+		color: #393838;
+	  }
+    </style>
+  </head>
+  <body>
+      <header>
+      <div class="container-fluid">
+          <div class="row cabecera ml-5">
+              <div class="col-4 justify-content-left">
+                  <img src="./img/logo.PNG" height="150px">
+			  </div>
+			  
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+              <ul class="navbar-nav py-2">
+                <li class="nav-item active pr-5">
+                  <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item pr-5">
+                  <a class="nav-link" href="#">Sobre nosotros</a>
+                </li>
+                <li class="nav-item pr-5">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Buscar</a>
+                </li>
+                <li class="nav-item pr-5">
+                  <a class="nav-link" href="#">Instalaciones</a>
+                </li>
+                <li class="nav-item pr-5">
+                    <a class="nav-link" href="#">Contacto</a>
+                  </li>
+                <li class="nav-item active pr-5 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="index.php?vista=login">Login</a>
+                      <a class="dropdown-item" href="index.php?vista=registro">Registro nuevo usuario</a>
+                    </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </header>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i> Aviso</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3 class="text-danger">Debe estar registrado para realizar una búsqueda</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		<title>Meny - A three dimensional and space efficient menu concept</title>
+      <div class="container-fluid text-center slider text-black py-5">
+		<h1 class="display-4 pt-3">¿Te gustaría trabajar con nosotros?</h1>
+          <p>Envianos tus datos</p>
+            <button type="submit" class="btn btn-primary mb-2 bg-danger">Enviar</button>
+      </div>
 
-		<meta name="description" content="A three dimensional and space efficient menu created with JavaScript and CSS 3.">
-		<meta name="author" content="Hakim El Hattab">
+      <div class="container justify-content-center py-5">
+        <div class="row">
+          <div class="col-lg-3 col-sm-12">
+            <h3 class="display3 text-dark"><i class="far fa-clock"></i> Horario</h3>
+            <hr>
+            <ul class="list-unstyled pt-3">
+              <li><i class="fas fa-calendar-day pr-1"></i> Lunes-Viernes: 9.00h - 21:30h</li>
+              <li><i class="fas fa-calendar-day pr-1"></i>Sábados: 9:00h - 14:00h</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 col sm-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.3727736062438!2d-6.009989384355163!3d37.40466304113908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126b8b8d549607%3A0xf6f214e62ecf3d8b!2sCalle%20Leonardo%20da%20Vinci%2C%207%2C%2041092%20Sevilla!5e0!3m2!1ses!2ses!4v1580836273299!5m2!1ses!2ses" width="450" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>
+          <div class="col-lg-3 col sm-12">
+            <h3 class="display3 text-dark"><i class="fas fa-car"></i> Nuestras marcas</h3>
+            <hr>
+            <!-- <ul class="list-unstyled pt-3">
+              <li>BMW</li>
+              <li>Audi</li>
+              <li>Wolswagen</li>
+              <li>Seat</li>
+            </ul> -->
+            <div class="row pb-4">
+              <div class="col-lg-6 col-sm-12">
+                <img src="./views/img/bmw.jpg" class="img-fluid">
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <img src="./views/img/audi.jpg" class="img-fluid">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <img src="./views/img/wg.jpg" class="img-fluid">
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <img src="./views/img/seat.png" class="img-fluid">
+              </div>
+            </div>
+          </div>
 
-		<meta name="viewport" content="width=800, user-scalable=no">
-
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
-		<link rel="stylesheet" href="css/demo.css">
-	</head>
-
-	<body>
-
-		<div class="meny">
-			<h2>NOF</h2>
-			<ul>
-				<li><a href="#">Inicio</a></li>
-				<li><a href="#">Sobre nosotros</a></li>
-				<li><a href="#">Nuestros Servicios</a></li>
-				<li><a href="#">stroll.js</a></li>
-				<li><a href="#">zoom.js</a></li>
-				<li><a href="#">reveal.js</a></li>
-				<li><a href="#">Sinuous for iOS</a></li>
-				<li><a href="http://hakim.se/experiments/css/domtree/">DOM Tree</a></li>
-				<li><a href="http://hakim.se/experiments/css/holobox/">Holobox</a></li>
-				<li><a href="http://hakim.se/experiments/html5/404/netmag.html">404</a></li>
-			</ul>
-		</div>
-
-		<div class="meny-arrow"></div>
-
-		<div class="contents">
-			<article>
-				<h1>Meny</h1>
-				<p>
-					A three dimensional and space efficient menu.
-				</p>
-				<p>
-					Move your mouse towards the arrow &mdash; or swipe in from the arrow if you're on a touch device &mdash; to open.
-					Test it with any page by appending a URL, like so: <a href="http://lab.hakim.se/meny/?u=http://hakim.se">lab.hakim.se/meny/?u=http://hakim.se.</a>
-				</p>
-				<p>
-					Meny can be positioned on any side of the screen: <br>
-					 <a href="http://lab.hakim.se/meny/?p=top">top</a>
-					 - <a href="http://lab.hakim.se/meny/?p=right">right</a>
-					 - <a href="http://lab.hakim.se/meny/?p=bottom">bottom</a>
-					 - <a href="http://lab.hakim.se/meny/?p=left">left</a>
-				</p>
-				<p>
-					Instructions and download at <a href="http://github.com/hakimel/meny">github.com/hakimel/meny</a>.
-				</p>
-				<p>
-					The name, <em>Meny</em>, is swedish.
-				</p>
-				<small>
-					Created by <a href="https://twitter.com/hakimel">@hakimel</a> / <a href="http://hakim.se/">http://hakim.se</a>
-				</small>
-			</article>
-
-			<div class="sharing">
-				<a href="https://twitter.com/share" class="twitter-share-button" data-text="Meny - a three dimensional and space efficient menu concept by @hakimel" data-url="http://lab.hakim.se/meny" data-count="small" data-related="hakimel"></a>
-
-				<iframe id="facebook-button" src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Flab.hakim.se%2Fmeny%2F&layout=button_count&show_faces=false&width=83&action=like&font=arial&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:24px; position: relative; top: 4px;" allowTransparency="true"></iframe>
-			</div>
-
-			<!-- <a href="https://github.com/hakimel/meny"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a> -->
-		</div>
-
-		<script src="js/meny.js"></script>
-		<script>
-			// Create an instance of Meny
-			var meny = Meny.create({
-				// The element that will be animated in from off screen
-				menuElement: document.querySelector( '.meny' ),
-
-				// The contents that gets pushed aside while Meny is active
-				contentsElement: document.querySelector( '.contents' ),
-
-				// [optional] The alignment of the menu (top/right/bottom/left)
-				position: Meny.getQuery().p || 'left',
-
-				// [optional] The height of the menu (when using top/bottom position)
-				height: 200,
-
-				// [optional] The width of the menu (when using left/right position)
-				width: 260,
-
-				// [optional] Distance from mouse (in pixels) when menu should open
-				threshold: 40,
-
-				// [optional] Use mouse movement to automatically open/close
-				mouse: true,
-
-				// [optional] Use touch swipe events to open/close
-				touch: true
-			});
-
-			// API Methods:
-			// meny.open();
-			// meny.close();
-			// meny.isOpen();
-
-			// Events:
-			// meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
-			// meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
-
-			// Embed an iframe if a URL is passed in
-			if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
-				var contents = document.querySelector( '.contents' );
-				contents.style.padding = '0px';
-				contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
-			}
-		</script>
-
-		<script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
-
-	</body>
+        </div>
+      </div>
+      <footer class=" footer container-fluid text-center text-white"> 
+        <div class="row pt-2">
+          <div class="col-lg-4 col-sm-12">
+            <h4>¿Qué hacemos?</h4>
+            <ul class="list-unstyled pt-3">
+              <li>Información detallada</li>
+              <li>Seguimiento de jovenes promesas</li>
+              <li>Análisis de los equipos</li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <h4>Redes sociales</h4>
+            <div class="row pt-3">
+              <div class="col-12">
+                <i class="fab fa-twitter-square fa-2x pr-4"></i>
+                <i class="fab fa-instagram fa-2x pr-4"></i>
+                <i class="fab fa-facebook-square fa-2x pr-4"></i>
+                <i class="fab fa-linkedin fa-2x pr-4"></i>
+              </div>
+            </div>
+            
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <h4>¿Quienes somos?</h4>
+            <ul class="list-unstyled pt-3">
+              <li>Joaquín Bono Pineda</li>
+              <li>joaquinbono.18@campuscamara.es</li>
+              <li>Alcalá de Guadaira, Sevilla</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-copyright text-center py-3">© 2020 Copyright: Joaquín Bono
+        </div>
+      </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e13faebda0.js" crossorigin="anonymous"></script>
+  </body>
 </html>
