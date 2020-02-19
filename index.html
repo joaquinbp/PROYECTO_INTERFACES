@@ -1,367 +1,306 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>NOF</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="./views/css/style.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-      .slider {
-        background: url("./img/portada.jpg");
-        height: 380px;
-        background-size: cover;
-      }
-    
-      .footer {
-        background: url("./img/pizarra.jpg");
-        
-      }
-      .navbar{
-        background-color:#393838;
-	  }
-	  .titulo {
-		font-family: 'Droid Serif';
-		color: #393838;
-	  }
-    </style>
-  </head>
-  <body>
-      <header>
-      <div class="container-fluid">
-          <div class="row cabecera ml-5">
-              <div class="col-4 justify-content-left">
-                  <img src="./img/logo.PNG" height="150px">
-			  </div>
-			  
-          </div>
+<head>
+  <title>NOF</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="./views/css/style.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .slider {
+      background: url("./img/portada.jpg");
+      height: 380px;
+      background-size: cover;
+    }
+
+    .footer {
+      background: url("./img/pizarra.jpg");
+
+    }
+
+    .navbar {
+      background-color: #393838;
+    }
+
+    .titulo {
+      font-family: 'Droid Serif';
+      color: #393838;
+    }
+
+    #flip-container {
+      -webkit-perspective: 1000px;
+      perspective: 1000px;
+      padding: 50px;
+      position: relative;
+      margin: 5px auto;
+      width: 100%;
+    }
+
+    .card {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      transform-origin: 100% 25px;
+      margin: 1px;
+    }
+
+    .card:hover,
+    .card.flip {
+      transform: rotateX(180deg);
+    }
+
+    .front1,
+    .front2,
+    .front3,
+    .front4,
+    .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      text-align: center;
+    }
+
+    .front1 {
+      transform: rotateX(0deg);
+      z-index: 2;
+      background: url("./img/electricista.png");
+      color: #FFF;
+      font: 1em/1.8em Arial;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .front2 {
+      transform: rotateX(0deg);
+      z-index: 2;
+      background: url("./img/fontanero.jpg");
+      color: #FFF;
+      font: 1em/1.8em Arial;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .front3 {
+      transform: rotateX(0deg);
+      z-index: 2;
+      background: url("./img/pintor.jpg");
+      color: #FFF;
+      font: 1em/1.8em Arial;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .front4 {
+      transform: rotateX(0deg);
+      z-index: 2;
+      background: url("./img/reparaciones.jpg");
+      color: #FFF;
+      font: 1em/1.8em Arial;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .back {
+      transform: rotateX(180deg);
+      background: repeating-linear-gradient(-45deg,
+          #ececec,
+          #ececec 10px,
+          #dedede 10px,
+          #dedede 20px);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row cabecera ml-5">
+        <div class="col-4 justify-content-left">
+          <img src="./img/logo.PNG" height="150px">
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-              <ul class="navbar-nav py-2">
-                <li class="nav-item active pr-5">
-                  <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item pr-5">
-                  <a class="nav-link" href="#">Sobre nosotros</a>
-                </li>
-                <li class="nav-item pr-5">
-                  <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Buscar</a>
-                </li>
-                <li class="nav-item pr-5">
-                  <a class="nav-link" href="#">Instalaciones</a>
-                </li>
-                <li class="nav-item pr-5">
-                    <a class="nav-link" href="#">Contacto</a>
-                  </li>
-                <li class="nav-item active pr-5 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item " href="login.html">Login</a>
-                    </div>
-                </li>
-              </ul>
+
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav py-2">
+          <li class="nav-item active pr-5">
+            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item pr-5">
+            <a class="nav-link" href="#">Sobre nosotros</a>
+          </li>
+          <li class="nav-item pr-5">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Buscar</a>
+          </li>
+          <li class="nav-item pr-5">
+            <a class="nav-link" href="#">Instalaciones</a>
+          </li>
+          <li class="nav-item pr-5">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+          <li class="nav-item active pr-5 dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item " href="login.html">Login</a>
             </div>
-          </nav>
-      </header>
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i> Aviso</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h3 class="text-danger">Debe estar registrado para realizar una búsqueda</h3>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i> Aviso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3 class="text-danger">Debe estar registrado para realizar una búsqueda</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid text-center slider text-black py-5">
+    <h1 class="display-4 pt-3">¿Te gustaría trabajar con nosotros?</h1>
+    <p>Envianos tus datos</p>
+    <button type="submit" class="btn btn-primary mb-2 bg-danger">Enviar</button>
+  </div>
+
+  <div class="container-fluid justify-content-center ">
+    <div class="row">
+      <div class="col-lg-3 col-sm-12">
+        <div id="flip-container">
+          <div id="card1" class="card">
+            <div class="front1"></div>
+            <div class="back">
+              <h2>Electricistas</h2>
+              <hr>
+              <p>Contamos con un gran equipo de profesionales en el sector</p>
+              <a href="electricistas.html"><button type="button" class="btn btn-primary">Ver profesionales</button></a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container-fluid text-center slider text-black py-5">
-		<h1 class="display-4 pt-3">¿Te gustaría trabajar con nosotros?</h1>
-          <p>Envianos tus datos</p>
-            <button type="submit" class="btn btn-primary mb-2 bg-danger">Enviar</button>
-      </div>
 
-      <div class="container justify-content-center py-5">
-        <div class="row">
-          <div class="col-lg-3 col-sm-12">
-            <h3 class="display3 text-dark"><i class="far fa-clock"></i> Horario</h3>
-            <hr>
-            <ul class="list-unstyled pt-3">
-              <li><i class="fas fa-calendar-day pr-1"></i> Lunes-Viernes: 9.00h - 21:30h</li>
-              <li><i class="fas fa-calendar-day pr-1"></i>Sábados: 9:00h - 14:00h</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 col sm-12">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.3727736062438!2d-6.009989384355163!3d37.40466304113908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126b8b8d549607%3A0xf6f214e62ecf3d8b!2sCalle%20Leonardo%20da%20Vinci%2C%207%2C%2041092%20Sevilla!5e0!3m2!1ses!2ses!4v1580836273299!5m2!1ses!2ses" width="450" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-          </div>
-          <div class="col-lg-3 col sm-12">
-            <h3 class="display3 text-dark"><i class="fas fa-car"></i> Nuestras marcas</h3>
-            <hr>
-            <!-- <ul class="list-unstyled pt-3">
-              <li>BMW</li>
-              <li>Audi</li>
-              <li>Wolswagen</li>
-              <li>Seat</li>
-            </ul> -->
-            <div class="row pb-4">
-              <div class="col-lg-6 col-sm-12">
-                <img src="./views/img/bmw.jpg" class="img-fluid">
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                <img src="./views/img/audi.jpg" class="img-fluid">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 col-sm-12">
-                <img src="./views/img/wg.jpg" class="img-fluid">
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                <img src="./views/img/seat.png" class="img-fluid">
-              </div>
+      <div class="col-lg-3 col-sm-12">
+        <div id="flip-container">
+          <div id="card1" class="card">
+            <div class="front2"></div>
+            <div class="back">
+              <h2>Fontaneros</h2>
+              <hr>
+              <p>Contamos con un gran equipo de profesionales en el sector</p>
+              <a href="login.html"><button type="button" class="btn btn-primary">Ver profesionales</button></a>
             </div>
           </div>
-          <!--Grid row-->
-<div class="row">
-
-  <!--Grid column-->
-  <div class="col-md-6 mb-4">
-
-    <!-- Card -->
-    <div class="card gradient-card">
-
-        <div class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
-
-          <!-- Content -->
-          <a href="#!">
-            <div class="text-white d-flex h-100 mask blue-gradient-rgba">
-              <div class="first-content align-self-center p-3">
-                <h3 class="card-title">Today's sales</h3>
-                <p class="lead mb-0">Click on this card to see details</p>
-              </div>
-              <div class="second-content align-self-center mx-auto text-center">
-                <i class="far fa-money-bill-alt fa-3x"></i>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-        <!-- Data -->
-        <div class="third-content ml-auto mr-4 mb-2">
-          <p class="text-uppercase text-muted">Today's sale</p>
-          <h4 class="font-weight-bold float-right">2000$</h4>
-        </div>
-
-        <!-- Content -->
-        <div class="card-body white">
-          <div class="progress md-progress">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <p class="text-muted">Better than last week (25%)</p>
-          <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-          <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-        </div>
-
-    </div>
-    <!-- Card -->
-
-  </div>
-  <!--Grid column-->
-
-  <!--Grid column-->
-  <div class="col-md-6 mb-4">
-
-    <!-- Card -->
-    <div class="card gradient-card">
-
-        <div class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-
-          <!-- Content -->
-          <a href="#!">
-            <div class="text-white d-flex h-100 mask purple-gradient-rgba">
-              <div class="first-content align-self-center p-3">
-                <h3 class="card-title">Subscriptions</h3>
-                <p class="lead mb-0">Click on this card to see details</p>
-              </div>
-              <div class="second-content  align-self-center mx-auto text-center">
-                <i class="fas fa-chart-line fa-3x"></i>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-        <!-- Data -->
-        <div class="third-content  ml-auto mr-4 mb-2">
-          <p class="text-uppercase text-muted">Subscriptions</p>
-          <h4 class="font-weight-bold float-right">200</h4>
-        </div>
-
-        <!-- Content -->
-        <div class="card-body white">
-          <div class="progress md-progress">
-            <div class="progress-bar purple lighten-2" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <p class="text-muted">Worse than last week (25%)</p>
-          <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-          <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-        </div>
-
-    </div>
-    <!-- Card -->
-
-  </div>
-  <!--Grid column-->
-
-  <!--Grid column-->
-  <div class="col-md-6 mb-4">
-
-    <!-- Card -->
-    <div class="card gradient-card">
-
-        <div class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-
-          <!-- Content -->
-          <a href="#!">
-            <div class="text-white d-flex h-100 mask peach-gradient-rgba">
-              <div class="first-content align-self-center p-3">
-                <h3 class="card-title">Traffic</h3>
-                <p class="lead mb-0">Click on this card to see details</p>
-              </div>
-              <div class="second-content  align-self-center mx-auto text-center">
-                <i class="fas fa-chart-pie fa-3x"></i>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-        <!-- Data -->
-        <div class="third-content  ml-auto mr-4 mb-2">
-          <p class="text-uppercase text-muted">Traffic</p>
-          <h4 class="font-weight-bold float-right">20000</h4>
-        </div>
-
-        <!-- Content -->
-        <div class="card-body white animated">
-          <div class="progress md-progress">
-            <div class="progress-bar amber darken-3" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <p class="text-muted">Worse than last week (75%)</p>
-          <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-          <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-        </div>
-
-    </div>
-    <!-- Card -->
-
-  </div>
-  <!--Grid column-->
-
-  <!--Grid column-->
-  <div class="col-md-6 mb-4">
-
-    <!-- Card -->
-    <div class="card gradient-card">
-
-        <div class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-
-          <!-- Content -->
-          <a href="#!">
-            <div class="text-white d-flex h-100 mask aqua-gradient-rgba">
-              <div class="first-content align-self-center p-3">
-                <h3 class="card-title">Organic traffic</h3>
-                <p class="lead mb-0">Click on this card to see details</p>
-              </div>
-              <div class="second-content  align-self-center mx-auto text-center">
-                <i class="fas fa-chart-line fa-3x"></i>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-        <!-- Data -->
-        <div class="third-content  ml-auto mr-4 mb-2">
-          <p class="text-uppercase text-muted">Organic traffic</p>
-          <h4 class="font-weight-bold float-right">2000</h4>
-        </div>
-
-        <!-- Content -->
-        <div class="card-body white">
-          <div class="progress md-progress">
-            <div class="progress-bar cyan lighten-1" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <p class="text-muted">Better than last week (50%)</p>
-          <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-          <p class="text-muted" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam vel dolores qui, necessitatibus aut eaque magni mollitia tenetur molestiae sit quae quos quaerat amet exercitationem atque animi odio.</p>
-        </div>
-
-    </div>
-    <!-- Card -->
-
-  </div>
-  <!--Grid column-->
-
-</div>
-<!--Grid row-->
-          <img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png" alt="Buy Now" />
         </div>
       </div>
-      <footer class=" footer container-fluid text-center text-white"> 
-        <div class="row pt-2">
-          <div class="col-lg-4 col-sm-12">
-            <h4>¿Qué hacemos?</h4>
-            <ul class="list-unstyled pt-3">
-              <li>Información detallada</li>
-              <li>Seguimiento de jovenes promesa</li>
-              <li>Análisis de los equipos</li>
-            </ul>
-          </div>
-          <div class="col-lg-4 col-sm-12">
-            <h4>Redes sociales</h4>
-            <div class="row pt-3">
-              <div class="col-12">
-                <i class="fab fa-twitter-square fa-2x pr-4"></i>
-                <i class="fab fa-instagram fa-2x pr-4"></i>
-                <i class="fab fa-facebook-square fa-2x pr-4"></i>
-                <i class="fab fa-linkedin fa-2x pr-4"></i>
-              </div>
+      <div class="col-lg-3 col-sm-12">
+        <div id="flip-container">
+          <div id="card1" class="card">
+            <div class="front3"></div>
+            <div class="back">
+              <h2>Pintores</h2>
+              <hr>
+              <p>Contamos con un gran equipo de profesionales en el sector</p>
+              <a href="login.html"><button type="button" class="btn btn-primary">Ver profesionales</button></a>
             </div>
-            
-          </div>
-          <div class="col-lg-4 col-sm-12">
-            <h4>¿Quienes somos?</h4>
-            <ul class="list-unstyled pt-3">
-              <li>Joaquín Bono Pineda</li>
-              <li>joaquinbono.18@campuscamara.es</li>
-              <li>Alcalá de Guadaira, Sevilla</li>
-            </ul>
           </div>
         </div>
-        <div class="footer-copyright text-center py-3">© 2020 Copyright: Joaquín Bono
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <div id="flip-container">
+          <div id="card1" class="card">
+            <div class="front4"></div>
+            <div class="back">
+              <h2>Reparación electrodomésticos</h2>
+              <hr>
+              <p>Contamos con un gran equipo de profesionales en el sector</p>
+              <a href="login.html"><button type="button" class="btn btn-primary">Ver profesionales</button></a>
+            </div>
+          </div>
         </div>
-	  </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="https://kit.fontawesome.com/e13faebda0.js" crossorigin="anonymous"></script>
-  </body>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+  <footer class=" footer container-fluid text-center text-white">
+    <div class="row pt-2">
+      <div class="col-lg-4 col-sm-12">
+        <h4>¿Qué hacemos?</h4>
+        <ul class="list-unstyled pt-3">
+          <li>Información detallada</li>
+          <li>Seguimiento de jovenes promesa</li>
+          <li>Análisis de los equipos</li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <h4>Redes sociales</h4>
+        <div class="row pt-3">
+          <div class="col-12">
+            <i class="fab fa-twitter-square fa-2x pr-4"></i>
+            <i class="fab fa-instagram fa-2x pr-4"></i>
+            <i class="fab fa-facebook-square fa-2x pr-4"></i>
+            <i class="fab fa-linkedin fa-2x pr-4"></i>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <h4>¿Quienes somos?</h4>
+        <ul class="list-unstyled pt-3">
+          <li>Joaquín Bono Pineda</li>
+          <li>joaquinbono.18@campuscamara.es</li>
+          <li>Alcalá de Guadaira, Sevilla</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright: Joaquín Bono
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/e13faebda0.js" crossorigin="anonymous"></script>
+</body>
+
 </html>

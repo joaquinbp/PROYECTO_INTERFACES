@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Car Bono</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="./views/css/style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .slider {
+            background: url("./img/portada.jpg");
+            height: 380px;
+            background-size: cover;
+        }
+
+        .footer {
+            background: url("./img/pizarra.jpg");
+
+        }
+
+        .navbar {
+            background-color: rgb(17, 16, 16);
+        }
+
+
+        a {
+            color: #92badd;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin: 40px 8px 10px 8px;
+            color: #cccccc;
+        }
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row cabecera ml-5">
+                <div class="col-4 justify-content-left">
+                    <img src="./img/logo.PNG" height="150px">
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav py-2">
+                    <li class="nav-item active pr-5">
+                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item pr-5">
+                        <a class="nav-link" href="#">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item pr-5">
+                        <a class="nav-link" href="#">Buscar</a>
+                    </li>
+                    <li class="nav-item pr-5">
+                        <a class="nav-link" href="#">Instalaciones</a>
+                    </li>
+                    <li class="nav-item pr-5">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item active pr-5 dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                class="fas fa-user"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="index.php?vista=login">Login</a>
+                            <a class="dropdown-item" href="index.php?vista=registro">Registro nuevo usuario</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container justify-content-center py-5">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./img/electricista.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Tenselect</h5>
+                      <form>
+                        <p class="clasificacion">
+                          <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                          --><label for="radio1">★</label><!--
+                          --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                          --><label for="radio2">★</label><!--
+                          --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                          --><label for="radio3">★</label><!--
+                          --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                          --><label for="radio4">★</label><!--
+                          --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                          --><label for="radio5">★</label>
+                        </p>
+                      </form>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Contratar</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./img/electricista.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Uniel S.L.</h5>
+                      <form>
+                        <p class="clasificacion">
+                          <input id="radio6" type="radio" name="estrellas" value="5"><!--
+                          --><label for="radio6">★</label><!--
+                          --><input id="radio7" type="radio" name="estrellas" value="4"><!--
+                          --><label for="radio7">★</label><!--
+                          --><input id="radio8" type="radio" name="estrellas" value="3"><!--
+                          --><label for="radio8">★</label><!--
+                          --><input id="radio9" type="radio" name="estrellas" value="2"><!--
+                          --><label for="radio9">★</label><!--
+                          --><input id="radio10" type="radio" name="estrellas" value="1"><!--
+                          --><label for="radio10">★</label>
+                        </p>
+                      </form>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Contratar</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./img/electricista.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Electro Giralda</h5>
+                      <form>
+                        <p class="clasificacion">
+                          <input id="radio11" type="radio" name="estrellas" value="5"><!--
+                          --><label for="radio11">★</label><!--
+                          --><input id="radio12" type="radio" name="estrellas" value="4"><!--
+                          --><label for="radio12">★</label><!--
+                          --><input id="radio13" type="radio" name="estrellas" value="3"><!--
+                          --><label for="radio13">★</label><!--
+                          --><input id="radio14" type="radio" name="estrellas" value="2"><!--
+                          --><label for="radio14">★</label><!--
+                          --><input id="radio15" type="radio" name="estrellas" value="1"><!--
+                          --><label for="radio15">★</label>
+                        </p>
+                      </form>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Contratar</a>
+                    </div>
+                  </div>
+            </div>
+           
+        </div>
+        <div class="row py-5">
+            <div class="col-lg-4 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./img/electricista.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Luz de Sevilla</h5>
+                      <form>
+                        <p class="clasificacion">
+                          <input id="radio16" type="radio" name="estrellas" value="5"><!--
+                          --><label for="radio16">★</label><!--
+                          --><input id="radio17" type="radio" name="estrellas" value="4"><!--
+                          --><label for="radio17">★</label><!--
+                          --><input id="radio18" type="radio" name="estrellas" value="3"><!--
+                          --><label for="radio18">★</label><!--
+                          --><input id="radio19" type="radio" name="estrellas" value="2"><!--
+                          --><label for="radio19">★</label><!--
+                          --><input id="radio20" type="radio" name="estrellas" value="1"><!--
+                          --><label for="radio20">★</label>
+                        </p>
+                      </form>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Contratar</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./img/electricista.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">SEVELEC SL</h5>
+                      <form>
+                        <p class="clasificacion">
+                          <input id="radio21" type="radio" name="estrellas" value="5"><!--
+                          --><label for="radio21">★</label><!--
+                          --><input id="radio22" type="radio" name="estrellas" value="4"><!--
+                          --><label for="radio22">★</label><!--
+                          --><input id="radio23" type="radio" name="estrellas" value="3"><!--
+                          --><label for="radio23">★</label><!--
+                          --><input id="radio24" type="radio" name="estrellas" value="2"><!--
+                          --><label for="radio24">★</label><!--
+                          --><input id="radio25" type="radio" name="estrellas" value="1"><!--
+                          --><label for="radio25">★</label>
+                        </p>
+                      </form>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Contratar</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top img-fluid" src="./img/electricista.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Leyco</h5>
+                      <form>
+                        <p class="clasificacion">
+                          <input id="radio26" type="radio" name="estrellas" value="5"><!--
+                          --><label for="radio26">★</label><!--
+                          --><input id="radio27" type="radio" name="estrellas" value="4"><!--
+                          --><label for="radio27">★</label><!--
+                          --><input id="radio28" type="radio" name="estrellas" value="3"><!--
+                          --><label for="radio28">★</label><!--
+                          --><input id="radio29" type="radio" name="estrellas" value="2"><!--
+                          --><label for="radio29">★</label><!--
+                          --><input id="radio30" type="radio" name="estrellas" value="1"><!--
+                          --><label for="radio30">★</label>
+                        </p>
+                      </form>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Contratar</a>
+                    </div>
+                  </div>
+            </div>
+           
+        </div>
+    </div>
+
+        <footer class=" footer container-fluid text-center text-white">
+            <div class="row pt-2">
+                <div class="col-lg-4 col-sm-12">
+                    <h4>¿Qué hacemos?</h4>
+                    <ul class="list-unstyled pt-3">
+                        <li>Información detallada</li>
+                        <li>Seguimiento de jovenes promesas</li>
+                        <li>Análisis de los equipos</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <h4>Redes sociales</h4>
+                    <div class="row pt-3">
+                        <div class="col-12">
+                            <i class="fab fa-twitter-square fa-2x pr-4"></i>
+                            <i class="fab fa-instagram fa-2x pr-4"></i>
+                            <i class="fab fa-facebook-square fa-2x pr-4"></i>
+                            <i class="fab fa-linkedin fa-2x pr-4"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <h4>¿Quienes somos?</h4>
+                    <ul class="list-unstyled pt-3">
+                        <li>Joaquín Bono Pineda</li>
+                        <li>joaquinbono.18@campuscamara.es</li>
+                        <li>Alcalá de Guadaira, Sevilla</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright text-center py-3">© 2020 Copyright: Joaquín Bono
+            </div>
+        </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/e13faebda0.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
