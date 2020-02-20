@@ -3,7 +3,7 @@
   }
 
   #cierre{
-    display: none;
+    display: block;
   }
   #login{
     display: none;
@@ -15,7 +15,19 @@
   #contacto{
       display: block;
   }
-
+  .nosotros{
+    background-color: #D4DBD4;
+  }
+.servicios{
+  background-color: #F6F2A3;
+  color: #393838;
+}
+#profesionales{
+  background-color: #F8F293;
+}
+#contacto{
+  background-color: #93D8F8;
+}
 
   #errorUsu, #errorPass {
      

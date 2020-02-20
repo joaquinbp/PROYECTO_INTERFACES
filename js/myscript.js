@@ -46,7 +46,7 @@ function validaLogin(){
                 document.getElementById("cierre").style.display="block";
                 userName=user;
                 estaRegistrado=true;
-                location.href="index.html";
+                location.href="index_usuario.html";
 
             } else{
                 document.getElementById("errorPass").innerHTML="Usuario o contraseña incorrectos";
@@ -61,7 +61,47 @@ function validaLogin(){
      
 }
 
-
+/*
 function $(selector){
     return document.querySelector(selector);
 }
+
+
+
+function compruebaLogin() {
+    if(estaRegistrado){
+        document.getElementById("simboloLogin").style.display="none";
+        document.getElementById("cierre").style.display="block";
+    } else{
+        document.getElementById("simboloLogin").style.display="block";
+        document.getElementById("cierre").style.display="none";
+    }
+    alert("Ya estas cffefefegistrado");
+}
+
+window.onload = function(){
+    let login=document.getElementById("simboloLogin");
+    let cierre=document.getElementById("cierre")
+    if(estaRegistrado){
+        login.style.display="none";
+       cierre.style.display="block";
+    } else{
+        login.style.display="block";
+       cierre.style.display="none";
+    }
+}
+*/
+
+$(document).ready(function(){
+    $("div.valores").hide();
+    $("div.mision").hide();
+    $("div.vision").hide();
+});
+
+$(document).ready(function(){
+    $("h2").click(function(){
+        var clase = $(this).attr("class");
+        $("div." +clase).toggle("slow");
+    });
+});
+
