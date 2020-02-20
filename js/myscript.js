@@ -42,8 +42,7 @@ function validaLogin(){
                 if(usuarios[i]['admin']){
                     esAdmin=true;
                 }
-                document.getElementById("simboloLogin").style.display="none";
-                document.getElementById("cierre").style.display="block";
+
                 userName=user;
                 estaRegistrado=true;
                 location.href="index_usuario.html";
@@ -92,16 +91,18 @@ window.onload = function(){
 }
 */
 
-$(document).ready(function(){
-    $("div.valores").hide();
-    $("div.mision").hide();
-    $("div.vision").hide();
+//Scroll arriba de la pagina
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+        $('a.scroll-top').fadeIn('slow');
+
+    } else {
+        $('a.scroll-top').fadeOut('slow');
+    }
 });
 
-$(document).ready(function(){
-    $("h2").click(function(){
-        var clase = $(this).attr("class");
-        $("div." +clase).toggle("slow");
-    });
+$('a.scroll-top').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 600);
 });
 
