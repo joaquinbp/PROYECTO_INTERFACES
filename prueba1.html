@@ -1,89 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Document</title>
-    <style>
- #flip-container{
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  padding: 100px;
-  position: relative;
-  margin: 10px auto;
-  width: 500px;
+  <title>VALIDACIÓN DE LOS CHAVALES DE DAW</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style>
+    .container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
 }
-.card {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  transform-origin: 100% 25px;
-  margin: 5px;
-}
-.card:hover, .card.flip{
-  transform: rotateX(180deg);
-}
-.front, .back{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  text-align: center;
-}
-.front{
-  transform: rotateX(0deg);
-  z-index: 2;
-  background: url("./img/portada.jpg");
-  color: #FFF;
-  font: 1em/1.8em Arial;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.back{
-  transform: rotateX(180deg);
-  background: repeating-linear-gradient(
-    -45deg,
-    #ececec,
-    #ececec 10px,
-    #dedede 10px,
-    #dedede 20px
-  );
-}
-    </style>
+    label {
+      display: block;
+      margin: .5em 0;
+      
+    }
+    input, textarea{
+      opacity: 0.5;
+    }
+
+    .header {
+      color: black;
+      font-size: 40px;
+      padding: 10px;
+     
+    }
+
+    .bigicon {
+      font-size: 20px;
+      color: black;
+    }
+    body{
+     
+      background: url("./img/img4.jpg");
+      background-size: cover;
+    
+    }
+
+  </style>
 </head>
+
 <body>
-   
-        <div class="row">
-            <div class="col">
-                <div id="flip-container">
-                <div id="card1" class="card">
-                    <div class="front">Front</div>
-                    <div class="back">Electricistas</div>
-                  </div>
-                </div>
-            </div>
-            <div class="col">
-                <div id="flip-container">
-                <div id="card1" class="card">
-                    <div class="front">Nong</div>
-                    <div class="back">Electricistas</div>
-                  </div>
-                </div>
-            </div>
-        </div>
-       
-        
+  <div class="container">
+    <div class="row">
+      <div class="col-6 text-center">
+        <legend class="header">Contact us</legend>
+        <form name="contacto" id="contacto" method="post">
+          <div class="form-group">
+            <label for="nombre"><i class="fa fa-user bigicon"> Nombre</i></label>
+            <input name="nombre" id="nombre" size="30" />
+          </div>
+          <div class="form-group">
+            <label for="apellidos"><i class="fa fa-user bigicon"> Apellidos</i></label>
+            <input name="apellidos" id="apellidos" size="30" />
+          </div>
+          <div class="form-group">
+            <label for="email"><i class="fa fa-envelope-o bigicon"> Email</i></label>
+            <input name="email" id="email" size="45" />
+          </div>
+          <div class="form-group">
+            <label for="edad"><i class="fas fa-wrench bigicon"> Sector</i></label>
+            <select name="edad" id="edad">
+              <option></option>
+              <option value="18-25">Fontanería</option>
+              <option value="26-45">Electricidad</option>
+              <option value="46-65">Pintura</option>
+              <option value="66+">Electrodomésticos</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="comentario"><i class="fa fa-pencil-square-o bigicon"> Comentario</i></label>
+            <textarea name="comentario" id="comentario" cols="40" rows="4"></textarea>
+          </div>
+          <label for="legal"><input type="checkbox" name="legal" id="legal" /> Estoy de acuerdo</label>
+          <label>¿Quiere recibir nuestro boletín?
+            <input type="radio" name="boletin" value="si" />Si
+            <input type="radio" name="boletin" value="no" />No
+          </label>
+          <button class="submit" disabled="disabled" onclick="volver()">Enviar</button>
+        </form>
       </div>
+     
 
-      <img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png" alt="Buy Now" />
+  </div>
+
+  <script src="https://kit.fontawesome.com/e13faebda0.js" crossorigin="anonymous"></script>
+  <script>
+    var namePattern = "^[a-z A-Z]{4,30}$";
+var emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$";
+
+function checkInput(idInput, pattern) {
+    return $(idInput).val().match(pattern) ? true : false;
+}
+
+function checkTextarea(idText) {
+    return $(idText).val().length > 12 ? true : false;
+}
+
+function checkRadioBox(nameRadioBox) {
+    return $(nameRadioBox).is(":checked") ? true : false;
+}
+
+function checkSelect(idSelect) {
+    return $(idSelect).val() ? true : false;
+}
+
+function enableSubmit(idForm) {
+  alert("Encncer");
+    $(idForm + " button.submit").removeAttr("disabled");
+}
+
+function disableSubmit(idForm) {
+    $(idForm + " button.submit").attr("disabled", "disabled");
+}
+
+function checkForm(idForm) {
+  alert("Hola");
+    $(idForm + " *").on("change keydown", function () {
+        if (checkInput("#nombre", namePattern) &&
+                checkInput("#apellidos", namePattern) &&
+                checkInput("#email", emailPattern) &&
+                checkSelect("#edad") &&
+                checkTextarea("#comentario") &&
+                checkRadioBox("#legal") &&
+                checkRadioBox("[name=boletin]"))
+        {
+            enableSubmit(idForm);
+        } else {
+            disableSubmit(idForm);
+        }
+    });
+}
+
+$(function () {
+    checkForm("#contacto");
+});
+
+function volver(){
+  alert("Gracias por su interes");
+  location.href="index_usuario.html";
+}
+  </script>
 </body>
-</html>
 
-<li class="nav-item pr-5">
-  <a class="nav-link" href="index.html"  role="button" ><button type="button" class="btn btn-danger" id="cierre">Cerrar sesion</button></a>
-</li>
+</html>
